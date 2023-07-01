@@ -26,13 +26,20 @@ def generate():
         num = (num % 3) + 1
         print(num)
 
+    # Temp fix for songId == 0
+    if(num == 0):
+        num = 1
+
     conn = connect()
 
     cursor = conn.cursor()
 
     songStatement = str("SELECT * FROM public.songs WHERE \"songId\" = " + str(num))
     cursor.execute(songStatement)
-    song = cursor.fetchall()[0]
+    song = cursor.fetchall()
+    print(song)
+    #song = cursor.fetchall()[0]
+    song= song[0]
 
     artistRef = song[2]
     artistStatment = str("SELECT * FROM public.artists WHERE \"artistId\" = " + str(artistRef))
