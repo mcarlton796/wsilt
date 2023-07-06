@@ -11,23 +11,25 @@
 </head>
 
 <body>
-    <svg xmlns="http://www.w3.org/2000/svg" xml:lang="en" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
-        <title>Circular Text Path</title>
-        <defs>
-          <path id="textcircle" d="M250,400
-                       a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z" transform="rotate(12,250,250)" />
-        </defs>
-        <g class="textcircle">
-          <text textLength="940">
-            <textPath 
-                      xlink:href="#textcircle" 
-                      aria-label="text circle path" 
-                      textLength="940">
-            What Should I Listen To? -uwu- What Should I Listen to? -uwu- 
-            </textPath>
-          </text>
-        </g>
-      </svg>
-    <button><a href="generate">Find a random song</a></button>
+  <div class="emoji"><img src="{{ url_for('static',filename='images/think.png') }}" alt="thinkn face"></div>
+  <svg xmlns="http://www.w3.org/2000/svg" xml:lang="en" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-97 0 700 425">
+    <title>Circular Text Path</title>
+    <defs>
+      <path id="textcircle" d="M250,400
+                   a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z" transform="rotate(12,250,250)" />
+    </defs>
+    <g class="textcircle">
+      <text textLength="940">
+        <textPath 
+                  xlink:href="#textcircle" 
+                  aria-label="text circle path" 
+                  textLength="940">
+                  What Should I Listen To? &#9658 What Should I Listen to? &#9658 
+        </textPath>
+      </text>
+    </g>
+  </svg>
+  <p> </p>
+  <button><a href="generate">Find a random song</a></button>
 </body>
 </html>
