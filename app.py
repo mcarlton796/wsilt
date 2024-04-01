@@ -22,19 +22,15 @@ def generate():
     num = int(random.random()*10)
 
     # TEMPORARY CONSTRAINT
-    if(num > 3):
-        num = (num % 3) + 1
+    if(num >= 13):
+        num = (num % 13)
         print(num)
-
-    # Temp fix for songId == 0
-    if(num == 0):
-        num = 1
 
     conn = connect()
 
     cursor = conn.cursor()
 
-    songStatement = str("SELECT * FROM public.songs WHERE \"songId\" = " + str(num))
+    songStatement = str("SELECT * FROM songs WHERE \"song_id\" = " + str(num))
     cursor.execute(songStatement)
     song = cursor.fetchall()
     print(song)
@@ -42,7 +38,7 @@ def generate():
     song= song[0]
 
     artistRef = song[2]
-    artistStatment = str("SELECT * FROM public.artists WHERE \"artistId\" = " + str(artistRef))
+    artistStatment = str("SELECT * FROM artists WHERE \"artist_id\" = " + str(artistRef))
     cursor.execute(artistStatment)
     artist = cursor.fetchall()[0]
 
@@ -55,4 +51,4 @@ def generate():
     return render_template('generate.html', listen = result)
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.run(host="0.0.0.0", debug=True)

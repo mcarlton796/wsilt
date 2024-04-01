@@ -8,14 +8,29 @@ h1
     margin-bottom: 10px;
 }
 
-p
+div p
 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 35px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 5px black;
+    position:relative;
+}
+
+.song
+{
+    transform: translateY(30%);
+    width: 500px;
+    height: 200px;
+    padding: 100px;
+    justify-content: center;
+    margin: auto;
     text-align: center;
 }
 
-button
+/*button
 {   
     font-family: 'Montserrat', sans-serif;
     height: 45px;
@@ -27,8 +42,9 @@ button
     letter-spacing: 0.4px;
     line-height: 24px;
     margin-bottom: 30px;
-    background-color: rgba(255, 255, 255, 0.25);
-    
+    background-color: rgba(255, 255, 255, 0.25);   
+    position: fixed;
+    transform: translateY(500%);
 }
 
 button a
@@ -36,22 +52,30 @@ button a
     text-decoration: none;
     opacity: 100%;
     color: #000;
-}
+}*/
 
 .emoji
 {
-    position: absolute;
     display: inline-flex;
-    z-index: -1;
+    height: 370px;
+    width: 370px;
+    position: absolute;
+    transform: translate(0px, -50%);
+    max-width: 60vmin;
+    max-height: 60vmin;
+    margin: auto;
+    opacity: 100%;
+    transition: 0.5s;
 }
 
-.emoji img
+.emoji:hover
 {
-    float: top;
-    display: block;
-    width: 30%;
-    height: auto;
-    margin: auto auto 185px;
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    margin: auto;
+    transform: translate(0px, -62%);
+    opacity: 80%;
 }
 
 body
@@ -59,10 +83,8 @@ body
     text-align: center;
     text-decoration: none;
     background: radial-gradient(#2dc5ac, #25205f);
+    background-color: #2a2561;
     min-height: 459px;
-}
-
-body {
     display: grid;
     place-items: center;
     min-height: 100vh;
@@ -82,7 +104,11 @@ text {
 }
 
 svg{
-    max-width: 80vmin;
+    max-width: 410vmin;
+    height: 510px;
+    position: absolute;
+    transform: translate(2px, -47%);
+    z-index: -2;
 }
 
 @keyframes rotate {
@@ -94,4 +120,54 @@ to {
 .textcircle {
     transition: transform 1s cubic-bezier(0.65, 0, 0.35, 1);
     transform-origin: 100px 100px;
+}
+
+@media screen and (max-width: 390px){
+
+    body
+    {
+        text-align: center;
+        text-decoration: none;
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+    }
+
+    .emoji
+    {
+        height: 220px;
+        width: 220px;
+        position: absolute;
+        transform: translate(37%, 80%);
+        max-width: 60vmin;
+        max-height: 60vmin;
+    }
+
+    svg
+    {
+        max-width: 200vmin;
+        height: 300px;
+        position: absolute;
+        transform: translate(-11%, 34%);
+    }
+
+    p
+    {
+        /*transform: translateY(1000%);*/
+        font-size: medium;
+        transform: translateY(700%);
+        text-align: center;
+    }
+
+    /*button
+    {   
+        
+        position: relative;
+        justify-content: center;
+        margin: auto;
+        text-align: center;
+        
+        transform: translateY(0%);
+    }*/
 }
