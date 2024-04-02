@@ -54,13 +54,20 @@ button a
     color: #000;
 }*/
 
+.emojiContainer
+{
+    position: absolute;
+    transform: translate(0px, -48%);
+    transition: 0.5s;
+}
+
 .emoji
 {
+    transform: rotate(-10deg);
+    animation: emojiPNG 15s infinite;
     display: inline-flex;
     height: 370px;
     width: 370px;
-    position: absolute;
-    transform: translate(0px, -50%);
     max-width: 60vmin;
     max-height: 60vmin;
     margin: auto;
@@ -68,14 +75,23 @@ button a
     transition: 0.5s;
 }
 
+.emojiContainer:hover
+{
+    position: absolute;
+    margin: auto;
+    transform: translate(0px, -61%);
+    opacity: 80%;
+}
+
 .emoji:hover
 {
     height: 300px;
     width: 300px;
-    position: absolute;
-    margin: auto;
-    transform: translate(0px, -62%);
-    opacity: 80%;
+}
+
+@keyframes emojiPNG 
+{
+    50% {transform: rotate(20deg);}
 }
 
 body
@@ -134,14 +150,36 @@ to {
         overflow: hidden;
     }
 
+        .emojiContainer
+    {
+        position: absolute;
+        transform: translate(83px, 81%);
+        transition: 0.5s;
+    }
+
     .emoji
     {
-        height: 220px;
-        width: 220px;
-        position: absolute;
-        transform: translate(37%, 80%);
+        height: 215px;
+        width: 215px;
         max-width: 60vmin;
         max-height: 60vmin;
+        transition: 1s;
+    }
+
+    .emojiContainer:hover
+    {
+        position: absolute;
+        transform: translate(83px, 81%);
+        transition: 0.5s;
+    }
+
+    .emoji:hover
+    {
+        height: 215px;
+        width: 215px;
+        max-width: 60vmin;
+        max-height: 60vmin;
+        transition: 1s;
     }
 
     svg
@@ -152,11 +190,25 @@ to {
         transform: translate(-11%, 34%);
     }
 
-    p
+    div p
     {
-        /*transform: translateY(1000%);*/
+        color: rgb(255, 255, 255);
+        font-family: "Montserrat", sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-shadow: 2px 2px 5px black;
+        position:relative;
+        max-width: 300px;
+        margin:auto;
+        transform: translate(-54%, 50%);
+        
+    }
+
+    /*p
+    {
+        transform: translateY(0%);
         font-size: medium;
-        transform: translateY(700%);
         text-align: center;
     }
 

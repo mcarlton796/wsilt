@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template
 import psycopg2
 import random
+from time import sleep
 
 # Flask App
 app = Flask(__name__)
@@ -17,6 +18,8 @@ def index():
 
 @app.route('/generate',methods = ['GET'])
 def generate():
+
+    sleep(0.1)
 
     random.seed()
     num = int(random.random()*10)
