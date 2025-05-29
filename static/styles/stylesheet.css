@@ -80,15 +80,18 @@ button a
     position: absolute;
     margin: auto;
     /* transform: translate(0px, -61%); */
-    transform: scale(90%) translate(0px, 110%);
+    transform: scale(80%) translate(0px, 97%);
     opacity: 80%;
 }
 
-.emoji:hover
+/* .emoji:hover
 {
     width: 30vmin;
     height: 30vmin;
-}
+    opacity: 80%;
+    position: absolute;
+    margin: auto;
+} */
 
 @keyframes emojiPNG 
 {
