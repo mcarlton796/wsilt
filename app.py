@@ -45,7 +45,7 @@ def generate():
     cursor.execute(artistStatment)
     artist = cursor.fetchall()[0]
 
-    result = "You should listen to " + song[1] + " by " + artist[1]
+    result = song[1] + " by " + artist[1]
 
     cursor.close()
     conn.close()

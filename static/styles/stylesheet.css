@@ -10,7 +10,7 @@ h1
 
 .song
 {
-    transform: translateY(150%);
+    /* transform: translateY(150%); */
     width: 50vw;
     height: 200px;
     /*padding: 100px;*/
@@ -24,7 +24,7 @@ h1
     letter-spacing: 4px;
     text-shadow: 2px 2px 5px black;
     position:absolute;
-    top: 45%;
+    bottom: 15vh;
 }
 
 /*button
@@ -145,10 +145,10 @@ to {
 @media screen and (max-width: 1200px){
 
     .song{
-        transform: translateY(85%);
+        /* transform: translateY(85%); */
         width: 70vw;
         font-size: 32px;
-        top: 45%;
+        bottom: 15vh;
     }
 
     svg{
@@ -182,6 +182,14 @@ to {
 
 @media screen and (max-width: 1000px){
 
+        .song{
+        /* transform: translateY(85%); */
+        width: 70vw;
+        font-size: 30px;
+        bottom: 15vh;
+    }
+
+
     svg{
         width: 70vmin;
         height: 70vmin;
@@ -209,9 +217,9 @@ to {
 @media screen and (max-width: 850px){
 
     .song{
-        transform: translateY(70%);
-        width: 80vw;
-        font-size: 30px;
+        bottom: 15vh;
+        letter-spacing: 2px;
+        font-weight: 600px;
     }
 
     svg{
@@ -235,8 +243,83 @@ to {
     {
         position: absolute;
         margin: auto;
-        /* transform: translate(0px, -61%); */
         transform: scale(80%) translate(0px, 125%);
         opacity: 80%;
+    }
+}
+
+@media screen and (max-width: 640px){
+
+    .song{
+        bottom: 10vh;
+        width: 75vw;
+        font-size: 26px;
+    }
+
+    svg{
+        width: 92vmin;
+        height: 92vmin;
+        transform: translate(0, 10%);
+    }
+
+    .emojiContainer
+    {
+        transform: translate(-1%, 102%);
+    }
+
+    .emoji
+    {
+        width: 40vmin;
+        height: 40vmin;
+    }
+}
+
+@media screen and (max-width: 520px){
+
+    .song{
+        bottom: 10vh;
+        width: 80vw;
+        font-size: 20px;
+    }
+
+    svg{
+        width: 100vmin;
+        height: 100vmin;
+    }
+
+    .emojiContainer
+    {
+        transform: translate(-1%, 103%);
+    }
+
+    .emoji
+    {
+        width: 43vmin;
+        height: 43vmin;
+    }
+}
+
+@media screen and (max-width: 450px){
+
+    .song{
+        bottom: 5vh;
+        width: 80vw;
+        font-size: 20px;
+    }
+
+    svg{
+        width: 115vmin;
+        height: 115vmin;
+    }
+
+    .emojiContainer
+    {
+        transform: translate(-1%, 101%);
+    }
+
+    .emoji
+    {
+        width: 50vmin;
+        height: 50vmin;
     }
 }
