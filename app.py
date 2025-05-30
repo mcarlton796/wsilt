@@ -22,22 +22,26 @@ def generate():
     sleep(0.1)
 
     random.seed()
-    num = int(random.random()*10)
-
-    # TEMPORARY CONSTRAINT
-    if(num >= 13):
-        num = (num % 13)
-        print(num)
+    num = int(random.random()*100)
+    print(num)
 
     conn = connect()
-
     cursor = conn.cursor()
+    
+    cursor.execute("SELECT COUNT(*) FROM songs")
+    max = cursor.fetchall()[0][0] - 1
+
+    # Maximum Constraint
+    if(num > max):
+        num = (num % max)
+        print(num)
+
+    
 
     songStatement = str("SELECT * FROM songs WHERE \"song_id\" = " + str(num))
     cursor.execute(songStatement)
     song = cursor.fetchall()
     print(song)
-    #song = cursor.fetchall()[0]
     song= song[0]
 
     artistRef = song[2]
