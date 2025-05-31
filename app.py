@@ -1,15 +1,29 @@
 from flask import Flask, request, render_template
 import psycopg2
 import random
+import configparser
 from time import sleep
 
 # Flask App
 app = Flask(__name__)
 
+# Parser
+parser = configparser.ConfigParser()
+try:
+    parser.read('config.ini')
+except configparser.Error as e:
+    print(f"Error reading config file: {e}")
+
+db = parser['DATABASE']
+
 # DB Connection
 @app.route('/dbConnection')
 def connect():
-    connection = psycopg2.connect(database = "music",user = "postgres", password = "1234", host = "localhost")
+    connection = psycopg2.connect(database = db['database'],
+                                    user = db['user'],
+                                    password = db['password'],
+                                    host = db['host'],
+                                    port=db['port'])
     return connection
 
 @app.route('/')
@@ -29,15 +43,15 @@ def generate():
     cursor = conn.cursor()
     
     cursor.execute("SELECT COUNT(*) FROM songs")
-    max = cursor.fetchall()[0][0] - 1
+    max = cursor.fetchall()[0][0]
 
     # Maximum Constraint
     if(num > max):
         num = (num % max)
         print(num)
 
-    
-
+    # temporary change
+    num=1
     songStatement = str("SELECT * FROM songs WHERE \"song_id\" = " + str(num))
     cursor.execute(songStatement)
     song = cursor.fetchall()
